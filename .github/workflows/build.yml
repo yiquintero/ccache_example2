@@ -98,4 +98,9 @@ jobs:
         cd "${{ github.workspace }}/install/bin";
         ./hello
 
+    - name: Debug Tests
+      #run : cat "${{ github.workspace }}/build/Testing/Temporary/LastTest.log"
+      run : cat "${{ github.workspace }}/build/CMakeCache.txt"
+      if: matrix.os == 'macos-latest'
+
 
