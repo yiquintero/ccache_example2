@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.16)
 project(hello)
 
 find_program(ccache_exe ccache)
-#if(ccache_exe)
-#   file(COPY_FILE
-#     ${ccache_exe} ${CMAKE_BINARY_DIR}/cl.exe
-#     ONLY_IF_DIFFERENT)
+if(ccache_exe)
+   file(COPY_FILE
+     ${ccache_exe} ${CMAKE_BINARY_DIR}/cl.exe
+     ONLY_IF_DIFFERENT)
 
   # By default Visual Studio generators will use /Zi which is not compatible
   # with ccache, so tell Visual Studio to use /Z7 instead.
@@ -20,7 +20,7 @@ find_program(ccache_exe ccache)
 #     "UseMultiToolTask=true"
 #     "DebugInformationFormat=OldStyle"
 #   )
-#endif()
+endif()
 
 add_executable(hello main.cpp)
 
