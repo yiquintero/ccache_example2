@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(hello)
 
-#find_program(ccache_exe ccache)
+find_program(ccache_exe ccache)
 #if(ccache_exe)
 #   file(COPY_FILE
 #     ${ccache_exe} ${CMAKE_BINARY_DIR}/cl.exe
